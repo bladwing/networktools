@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Menu from "./components/menu/Menu";
+import CreateDevice from "./components/createDevice/CreateDevice";
+import DeviceList from "./components/devices/DeviceList";
+import CreateBrand from "./components/createBrand/CreateBrand";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Menu />
+        <Routes>
+          <Route path="/" element={<TempPage />} />
+          <Route path="/create-device" element={<CreateDevice />} />
+          <Route path="/create-brand" element={<CreateBrand />} />
+
+          <Route path="/devices" element={<DeviceList />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+const TempPage = () => {
+  return (
+    <div>
+      <h1>Welcome</h1>
+    </div>
+  );
+};
+
+const NotFound = () => {
+  return (
+    <div>
+      <h3>NOT FOUND MODULE or ROUTE</h3>
+    </div>
+  );
+};
