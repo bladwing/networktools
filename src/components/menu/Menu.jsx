@@ -23,6 +23,21 @@ const Menu = () => {
             </Link>
           </li>
           <li>
+            <Link to="/tools">
+              <i className="fa fa-home"></i>
+              <strong>Tools</strong>
+              <small>Converters</small>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/tools2">
+              <i className="fa fa-home"></i>
+              <strong>Aruba WLC</strong>
+              <small>Command Generator</small>
+            </Link>
+          </li>
+          <li>
             <Link to="/devices">
               <i className="fa fa-comments-o"></i>
               <strong>Device's</strong>
@@ -50,6 +65,7 @@ const Menu = () => {
                   <i className="fa fa-globe"></i>Create Brand
                 </Link>
               </li>
+         
               {/* <li>
                 <Link to="/blog/team">
                 <i className="fa fa-globe"></i>Create Brand
