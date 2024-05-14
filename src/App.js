@@ -7,6 +7,7 @@ import CreateBrand from "./components/createBrand/CreateBrand";
 import RuckusMacToBSSID from "./components/Tools/RuckusMacToBSSID"
 import ArubaWLCgenerator from "./components/Tools/ArubaWLCgenerator"
 import RuckuSwitchIntConverter from "./components/Tools/RuckuSwitchIntConverter"
+import InterfaceCommands from "./components/Tools/InterfaceLLDPtoName";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/tools" element={<RuckusMacToBSSID />} />
 
           <Route path="/tools2" element={<ArubaWLCgenerator />} />
+          <Route path="/tools4" element={<InterfaceCommands />} />
           <Route path="/tools3" element={<RuckuSwitchIntConverter />} />
 
           <Route path="/devices" element={<DeviceList />} />

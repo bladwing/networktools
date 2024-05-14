@@ -47,6 +47,15 @@ const Menu = () => {
               <small>Command Generator Vlan 104to101</small>
             </Link>
           </li>
+
+          
+          <li>
+          <Link to="/tools4">
+              <i className="fa fa-home"></i>
+              <strong>Aruba LLDP2Name</strong>
+              <small>lldp to int name</small>
+            </Link>
+          </li>
           {/* <li>
             <Link to="/devices">
               <i className="fa fa-comments-o"></i>
