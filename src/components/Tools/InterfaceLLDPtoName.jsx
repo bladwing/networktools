@@ -5,7 +5,7 @@ const CommandGenerator = () => {
   const [inputList, setInputList] = useState('');
   const [commands, setCommands] = useState([]);
   const [copyMessage, setCopyMessage] = useState('');
-  const [mode, setMode] = useState('commands'); // 'commands' or 'names'
+  const [mode, setMode] = useState('commands'); // 'commands', 'names', or 'extract'
 
   const handleInputChange = (e) => {
     setInputList(e.target.value);
@@ -21,16 +21,23 @@ const CommandGenerator = () => {
     const lines = inputList.split('\n');
     const newOutput = lines.map((line) => {
       const parts = line.split('|').map(part => part.trim());
-      if (parts.length < 2) {
-        return null;
-      }
-      const intPart = parts[0].trim();
-      const nameParts = parts[1].split(/\s{2,}/);
-      const namePart = nameParts[nameParts.length - 1].trim();
-      if (mode === 'commands') {
-        return `int ${intPart}\nname ${namePart}\nexit`;
-      } else if (mode === 'names') {
-        return namePart;
+      if (mode === 'commands' || mode === 'names') {
+        if (parts.length < 2) {
+          return null;
+        }
+        const intPart = parts[0].trim();
+        const nameParts = parts[1].split(/\s{2,}/);
+        const namePart = nameParts[nameParts.length - 1].trim();
+        if (mode === 'commands') {
+          return `int ${intPart}\nname ${namePart}\nexit`;
+        } else if (mode === 'names') {
+          return namePart;
+        }
+      } else if (mode === 'extract') {
+        const nameMatch = line.match(/^name\s+(.+)$/);
+        if (nameMatch) {
+          return nameMatch[1].trim();
+        }
       }
       return null;
     }).filter(output => output !== null);
@@ -68,6 +75,7 @@ const CommandGenerator = () => {
           <select id="mode" className="form-select" value={mode} onChange={handleModeChange}>
             <option value="commands">Generate Commands</option>
             <option value="names">Extract Names</option>
+            <option value="extract">Extract from Commands</option>
           </select>
         </div>
       </div>
