@@ -66,6 +66,7 @@ const CommandGenerator = () => {
             value={inputList}
             onChange={handleInputChange}
             placeholder="Enter your list here..."
+            style={{width: "50%"}}
           />
         </div>
       </div>

@@ -1,22 +1,26 @@
 .interface-container {
-    display: flex;
-    justify-content: space-around;
-    
-    margin: 0 auto;
-    flex-wrap: wrap;
-    width: 800px;
-    .Input {
-        width: 50%;
-        padding: 10px;
-    }   
-    .Input-Switcher {
-        border: 1px solid black;
-        background-color: grey;
-        border-radius: 10px;
-        opacity: 80%;
-        color: white;
-        text-align: left;
-        padding: 20px;
-        width: 50%;
-    }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .Input {
+    width: 50%;
+    padding: 10px;
+  }
+  .Input-Switcher {
+    border: 1px solid black;
+    background-color: grey;
+    border-radius: 10px;
+    opacity: 80%;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 50%;
+  }
+}
+.custom-column {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.row {
+ width: 130% !important;
 }

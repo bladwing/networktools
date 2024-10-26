@@ -1,0 +1,83 @@
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    height: calc(100vh - 60px);
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.8s ease;
+    overflow: hidden;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .sidebar.closed {
+    width: 80px;
+  }
+  
+  .menu-toggle {
+    position: absolute;
+    right: -3px;
+    transform: translateX(-100%);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-content {
+    padding-top: 60px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+    text-decoration: none; /* Убрать подчеркивание */
+    color: inherit; /* Унаследовать цвет текста */
+    position: relative; /* For notification positioning */
+  }
+  
+  .menu-item:hover {
+    background-color: #e2e6ea;
+  }
+  
+  .icon-wrapper {
+    position: relative; /* For notification positioning */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 25px; /* Ensure consistent width */
+  }
+  
+  .icon {
+    font-size: 25px;
+  }
+  
+  .text {
+    margin-left: 15px;
+    font-size: 18px;
+    transition: opacity 0.3s, width 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .sidebar.closed .text {
+    display: none;
+  }
+  
+  .content {
+    margin-top: 60px;
+    transition: margin-left 0.8s ease;
+  }
+  
+  .content.open {
+    margin-left: 200px;
+  }
+  
+  .content.closed {
+    margin-left: 80px;
+  }
+  
